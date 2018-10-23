@@ -47,6 +47,7 @@ int main(int argc, char* argv[])
                         color = imagePixels[rows][columns];
                         color.green=0;
                         color.blue=0;
+                        imagePixels[rows][columns] = color;
                        // image.fromPixelMatrix(imagePixels);
                        // image.save("redness.bmp");
                 }
