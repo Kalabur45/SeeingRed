@@ -12,6 +12,8 @@ int main(int argc, char* argv[])
         Bitmap image;
         int height;
         int width;
+        Pixel color;
+        vector <vector<Pixel>> imagePixels;
 
         if(argc!=2)
         {
@@ -31,13 +33,27 @@ int main(int argc, char* argv[])
         else
         {
                 
-                vector <vector<Pixel>> imagePixels = image.toPixelMatrix();
+                imagePixels = image.toPixelMatrix();
                 
                 height = imagePixels.size();
                 width = imagePixels[0].size();
 
                 cout<<filename<< " is " << height << " pixels high and " << width << " pixels wide\n";
         }
+        for(int columns = 0; columns < imagePixels.size(); columns++)
+        {
+                for(int rows = 0; rows < imagePixels[0].size(); rows++)
+                {
+                        imagePixels[rows][columns] = color;
+                        color.green=0;
+                        color.blue=0;
+                       // image.fromPixelMatrix(imagePixels);
+                       // image.save("redness.bmp");
+                }
+        }
+       
+        image.fromPixelMatrix( imagePixels );
+                image.save("redness.bmp");
         
         
   return 0;
