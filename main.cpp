@@ -44,7 +44,7 @@ int main(int argc, char* argv[])
         {
                 for(int rows = 0; rows < imagePixels[0].size(); rows++)
                 {
-                        imagePixels[rows][columns] = color;
+                        color = imagePixels[rows][columns];
                         color.green=0;
                         color.blue=0;
                        // image.fromPixelMatrix(imagePixels);
